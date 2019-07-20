@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+<ul class="ct">
+    <li>这里是</li>
+    <li>饥人谷</li>
+</ul>
+
+<script>
+	var firstLi = document.querySelectorAll('li')[0]
+	var secondLi = document.querySelectorAll('li')[1]
+	
+	function firstClick(){
+		console.log(firstLi.innerText)
+	}
+	function secondClick(){
+		console.log(secondLi.innerText)
+	}
+
+	firstLi.setAttribute('onclick','firstClick()')
+	secondLi.setAttribute('onclick','secondClick()')
+</script>
+</body>
+</html>
