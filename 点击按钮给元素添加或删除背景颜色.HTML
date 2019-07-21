@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			padding: 10px;
+			border: 3px solid;
+		}
+
+		.changeColour {
+			background-color: red
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h2>hello</h2>
+		<p>jirengu</p>
+	</div>
+		<button>add</button>
+		<button>remove</button>
+		<button>toggle1</button>
+		<button>toggle2</button>
+
+
+	<script type="text/javascript">
+		var divstyle = document.querySelector('div')
+		var addBtn = document.querySelectorAll('button')[0]
+		var removeBtn = document.querySelectorAll('button')[1]
+		var toggle1Btn = document.querySelectorAll('button')[2]
+		var toggle2Btn = document.querySelectorAll('button')[3]
+
+		function addColor(){
+			divstyle.classList.add('changeColour')
+		}
+		function removeColor(){
+			divstyle.classList.remove('changeColour')
+		}
+		function toggleColor(){
+			if (divstyle.classList.contains('changeColour')) {
+				divstyle.classList.remove('changeColour')
+			}else{
+				divstyle.classList.add('changeColour')
+			}
+		}
+
+		addBtn.setAttribute('onclick','addColor()')
+		removeBtn.setAttribute('onclick','removeColor()')
+		toggle1Btn.setAttribute('onclick','toggleColor()')
+		toggle2Btn.setAttribute('onclick','toggleColor()')
+	</script>
+</body>
+</html>

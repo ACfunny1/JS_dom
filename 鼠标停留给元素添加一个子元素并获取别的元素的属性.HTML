@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			padding: 10px;
+			border: 3px solid;
+		}
+	</style>
+</head>
+<body>
+<ul class="ct">
+    <li data-img="1.png">鼠标放置查看图片1</li>
+    <li data-img="2.png">鼠标放置查看图片2</li>
+    <li data-img="3.png">鼠标放置查看图片3</li>
+</ul>
+<div class="img-preview">
+	
+</div>
+<script>
+	var firstLi = document.querySelectorAll('li')[0]
+	var secondLi = document.querySelectorAll('li')[1]
+	var thirdLi = document.querySelectorAll('li')[2]
+	var newDiv = document.querySelector('.img-preview')
+	var img = document.createElement('img')
+
+
+	function firstMove(){
+		newDiv.appendChild(img)
+		img.setAttribute('src',firstLi.getAttribute('data-img'))
+	}
+	function secondMove(){
+		newDiv.appendChild(img)
+		img.setAttribute('src',secondLi.getAttribute('data-img'))
+	}
+	function thirdMove(){
+		newDiv.appendChild(img)
+		img.setAttribute('src',thirdLi.getAttribute('data-img'))
+	}
+	function out(){
+		newDiv.removeChild(img)
+	}
+
+	//鼠标停留
+	firstLi.setAttribute('onMouseOver','firstMove()')
+	secondLi.setAttribute('onMouseOver','secondMove()')
+	thirdLi.setAttribute('onMouseOver','thirdMove()')
+	//鼠标离开时间
+	for(var i = 0;i<3;i++){
+		document.querySelectorAll('li')[i].setAttribute('onMouseOut','out()')
+	}
+
+
+</script>
+</body>
+</html>

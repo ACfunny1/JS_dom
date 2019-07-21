@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			padding: 10px;
+			border: 3px solid;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h2>hello</h2>
+		<p>jirengu</p>
+	</div>
+
+	<script type="text/javascript">
+		var divstyle = document.querySelector('div')
+
+
+		function css(node, styleObj){
+			var styleString = ''
+			for(var index in styleObj){
+				styleString += index+':'+styleObj[index]+';'
+			}
+			divstyle.setAttribute('style',styleString)
+		}
+
+
+		css(divstyle, {
+  		'color': 'red',
+  		'background-color': 'blue'
+		})
+	</script>
+</body>
+</html>
