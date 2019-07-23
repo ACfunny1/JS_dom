@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<ul class="ct">
+    <li>这里是</li>
+    <li>饥人谷</li>
+</ul>
+<script>
+	function $(select){
+		return document.querySelector(select)
+	}
+	function $$(select){
+		return document.querySelectorAll(select)
+	}
+
+	$('.ct').onclick = function(e){
+		console.log(e.target.innerText)
+	}
+</script>
+</body>
+</html>

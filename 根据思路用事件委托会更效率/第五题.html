@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			padding: 10px;
+			border: 3px solid black;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<h1>hello</h1>
+	<p>jirengu</p>
+</div>
+<button>add</button>
+<button>remove</button>
+<button>toggle1</button>
+<button>toggle2</button>
+
+
+
+
+<script>
+	function css(node, styleObj){
+		for(var i in styleObj){
+			node.style[i] = styleObj[i]
+			//node.style[background-color]使用中括号可以用破折号格式的
+			//node.style.backgroundColor使用'.'就必须使用驼峰法的格式了
+		}
+	}
+
+	css(document.body, {
+  	'color': 'red',
+  	'background-color': '#ccc'
+	})
+</script>
+</body>
+</html>

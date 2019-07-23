@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul class="ct">
+    <li data-img="1.png">鼠标放置查看图片1</li>
+    <li data-img="2.png">鼠标放置查看图片2</li>
+    <li data-img="3.png">鼠标放置查看图片3</li>
+</ul>
+<div class="img-preview"></div>
+<script>
+	function $(select){
+		return document.querySelector(select)
+	}
+	function $$(select){
+		return document.querySelectorAll(select)
+	}
+
+	var img = $('.img-preview')
+
+	$('.ct').onmouseover = function(e){
+		e.target.getAttribute('data-img')
+		img.setAttribute('src',e.target.getAttribute('data-img'))
+	}
+</script>
+</body>
+</html>
