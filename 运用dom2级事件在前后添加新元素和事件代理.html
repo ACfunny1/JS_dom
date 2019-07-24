@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        div {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="ct">
+        <li>这里是</li>
+        <li>饥人谷</li>
+        <li>任务班</li>
+    </ul>
+    <input class="ipt-add-content" placeholder="添加内容"/>
+    <button id="btn-add-start">开头添加</button>
+    <button id="btn-add-end">结尾添加</button>
+<script>
+    function $(select){
+        return document.querySelector(select)
+    }
+    function $$(select){
+        return document.querySelectorAll(select)
+    }
+
+
+    $('#btn-add-start').addEventListener('click' , function(e){
+        if($('.ipt-add-content').value != ''){
+            var newValue = $('.ipt-add-content').value
+            var newItem = document.createElement('li')
+            var textNode = document.createTextNode(newValue)
+            newItem.appendChild(textNode)
+            $('.ct').insertBefore(newItem,$('.ct').childNodes[0])
+        }else{
+            alert('请输入内容')
+        }
+    })
+
+    $('#btn-add-end').addEventListener('click',function(e){
+        if($('.ipt-add-content').value != ''){
+            var newValue = $('.ipt-add-content').value
+            var newItem = document.createElement('li')
+            var textNode = document.createTextNode(newValue)
+            newItem.appendChild(textNode)
+            $('.ct').appendChild(newItem)
+        }else{
+            alert('请输入内容')
+        }
+    })
+
+    $('.ipt-add-content').addEventListener('blur',function(){
+        return $('.ipt-add-content').value
+    })
+
+    $('.ct').onclick = function(e){
+        console.log(e.target.innerText)
+    }
+
+
+
+
+</script>
+</body>
+</html>
