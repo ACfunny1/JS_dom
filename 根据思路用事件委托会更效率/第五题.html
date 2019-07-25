@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style type="text/css">
-		div {
-			padding: 10px;
-			border: 3px solid black;
-		}
-	</style>
+    <title></title>
+    <style type="text/css">
+        div {
+            padding: 10px;
+            border: 3px solid black;
+        }
+    </style>
 </head>
 <body>
 <div>
-	<h1>hello</h1>
-	<p>jirengu</p>
+    <h1>hello</h1>
+    <p>jirengu</p>
 </div>
 <button>add</button>
 <button>remove</button>
@@ -23,18 +23,35 @@
 
 
 <script>
-	function css(node, styleObj){
-		for(var i in styleObj){
-			node.style[i] = styleObj[i]
-			//node.style[background-color]使用中括号可以用破折号格式的
-			//node.style.backgroundColor使用'.'就必须使用驼峰法的格式了
-		}
-	}
+    function $(select){
+        return document.querySelector(select)
+    }
+    function $$(select){
+        return document.querySelectorAll(select)
+    }
 
-	css(document.body, {
-  	'color': 'red',
-  	'background-color': '#ccc'
-	})
+    $('body').onclick = function(e){
+        if(e.target.innerText == 'add'){
+            $('div').style ='background:rgb(0,0,0);color:rgb(255,255,255)'
+        }
+        if(e.target.innerText == 'remove'){
+            $('div').removeAttribute('style')
+        }
+        if(e.target.innerText == 'toggle1'){
+            if($('div').getAttribute('style') != null){
+                $('div').removeAttribute('style')
+            }else if ($('div').getAttribute('style') == null) {
+                $('div').style = 'background:rgb(0,0,0);color:rgb(255,255,255)'
+            }
+        }
+        if (e.target.innerText == 'toggle2') {
+            if($('div').getAttribute('style') != null){
+                $('div').removeAttribute('style')
+            }else if ($('div').getAttribute('style') == null) {
+                $('div').style = 'background:rgb(0,0,0);color:rgb(255,255,255)'
+            }
+        }
+    }
 </script>
 </body>
 </html>

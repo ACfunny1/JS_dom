@@ -11,19 +11,18 @@
 </ul>
 <div class="img-preview"></div>
 <script>
-	function $(select){
-		return document.querySelector(select)
-	}
-	function $$(select){
-		return document.querySelectorAll(select)
-	}
+    function $(select){
+        return document.querySelector(select)
+    }
+    function $$(select){
+        return document.querySelectorAll(select)
+    }
 
-	var img = $('.img-preview')
-
-	$('.ct').onmouseover = function(e){
-		e.target.getAttribute('data-img')
-		img.setAttribute('src',e.target.getAttribute('data-img'))
-	}
+    var img = document.createElement('img')
+    $('.img-preview').appendChild(img)
+    $('.ct').onmouseover = function(e){
+        img.src = e.target.getAttribute('data-img')
+    }
 </script>
 </body>
 </html>

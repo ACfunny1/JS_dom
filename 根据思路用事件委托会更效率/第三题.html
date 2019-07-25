@@ -23,35 +23,35 @@
 
 
 <script>
-	function $(select){
-		return document.querySelector(select)
-	}
-	function $$(select){
-		return document.querySelectorAll(select)
-	}
+    function $(select){
+        return document.querySelector(select)
+    }
+    function $$(select){
+        return document.querySelectorAll(select)
+    }
 
-	$('body').onclick = function(e){
-		if(e.target.innerText == 'add'){
-			$('div').setAttribute('style','background:rgb(0,0,0);color:rgb(255,255,255)')
-		}
-		if(e.target.innerText == 'remove'){
-			$('div').removeAttribute('style')
-		}
-		if(e.target.innerText == 'toggle1'){
-			if($('div').getAttribute('style') != null){
-				$('div').removeAttribute('style')
-			}else if ($('div').getAttribute('style') == null) {
-				$('div').setAttribute('style','background:rgb(0,0,0);color:rgb(255,255,255)')
-			}
-		}
-		if (e.target.innerText == 'toggle2') {
-			if($('div').getAttribute('style') != null){
-				$('div').removeAttribute('style')
-			}else if ($('div').getAttribute('style') == null) {
-				$('div').setAttribute('style','background:rgb(0,0,0);color:rgb(255,255,255)')
-			}
-		}
-	}
+    $('body').onclick = function(e){
+        if(e.target.innerText == 'add'){
+            $('div').style ='background:rgb(0,0,0);color:rgb(255,255,255)'
+        }
+        if(e.target.innerText == 'remove'){
+            $('div').removeAttribute('style')
+        }
+        if(e.target.innerText == 'toggle1'){
+            if($('div').getAttribute('style') != null){
+                $('div').removeAttribute('style')
+            }else if ($('div').getAttribute('style') == null) {
+                $('div').style = 'background:rgb(0,0,0);color:rgb(255,255,255)'
+            }
+        }
+        if (e.target.innerText == 'toggle2') {
+            if($('div').getAttribute('style') != null){
+                $('div').removeAttribute('style')
+            }else if ($('div').getAttribute('style') == null) {
+                $('div').style = 'background:rgb(0,0,0);color:rgb(255,255,255)'
+            }
+        }
+    }
 </script>
 </body>
 </html>

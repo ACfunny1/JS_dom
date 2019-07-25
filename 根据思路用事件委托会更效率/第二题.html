@@ -9,16 +9,18 @@
     <li>饥人谷</li>
 </ul>
 <script>
-	function $(select){
-		return document.querySelector(select)
-	}
-	function $$(select){
-		return document.querySelectorAll(select)
-	}
+    function $(select){
+        return document.querySelector(select)
+    }
+    function $$(select){
+        return document.querySelectorAll(select)
+    }
 
-	$('.ct').onclick = function(e){
-		console.log(e.target.innerText)
-	}
+    $('.ct').onclick = function(e){
+        if(e.target.tagName == 'LI'){
+            console.log(e.target.innerText)
+        }
+    }
 </script>
 </body>
 </html>
