@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+  	img {
+  		width: 500px;
+  		height: 1000px;
+  	}
+  </style>
+</head>
+<body>
+	<img src="http://b-ssl.duitang.com/uploads/blog/201407/13/20140713125018_Ewcty.jpeg">
+
+
+	<script type="text/javascript">
+		 function $(select) {
+			return document.querySelector(select)
+		}
+		window.onload = function(){
+			var newImg = new Image();
+			newImg.src = $('img').src;
+			console.log(newImg.width)
+		}
+		
+	</script>
+</body>
+</html>
